@@ -46,8 +46,8 @@ export class FieldsComponent implements OnInit {
   }
   
   
-  addItem(field: string): void {
-    if (type == "file") {
+  addItem(field: string, subtype:string): void {
+    if (subtype == "file") {
       (<FormArray>this.itemForm.get(`${field}Source`)).push(new FormControl(''));
       (<FormArray>this.itemForm.get(field)).push(new FormControl(''));
     }
